@@ -1,0 +1,22 @@
+---
+title: "Texto prueba"
+author: "Alejandro Vale"
+date: "28/12/2020"
+output: pdf_document
+---
+
+## Titulo
+
+### Titulo
+
+Esto es un parrafo de \LaTeX.
+
+*texto en cursiva*
+
+**Para negritas**
+
+***Para negritas cursivas***
+
+[enlace](http://www.google.com)
+
+
