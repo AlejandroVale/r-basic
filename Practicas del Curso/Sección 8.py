@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pan
+import pandas as pand
 L1 =[]
 L2 = ['a','e','i','o','u'] # Lista con valores iniciales
 
