@@ -1,5 +1,5 @@
 import numpy as np
-
+import pandas as pan
 L1 =[]
 L2 = ['a','e','i','o','u'] # Lista con valores iniciales
 
@@ -21,5 +21,5 @@ print("Sentencia while")
 x = 1
 while x < 7:
     print(x)
-    x = x+1
+    x = x+1 
 
