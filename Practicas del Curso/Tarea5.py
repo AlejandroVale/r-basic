@@ -60,3 +60,55 @@ for c in texto:
 print("El codigo es: {}".format(codigo))
 
 #5
+dicx = {"Pedro":1, "Juan":2}
+dicy = {"Pedro":1, "Juan":2,"Carlos":3}
+
+def compara_dic(dic1,dic2):
+  dic_compara = {}
+  for key in dic1:
+        if dic2.get(key) != None :
+           #index = dic_compara.setdefault(dic2.get(key), dic2[dic2.get(key)])
+           index = dic_compara.setdefault(key, dic2.get(key))
+           
+  print("Claves presentes:",dic_compara)
+
+compara_dic(dicx,dicy)
+
+#6
+
+def num_primos(num):
+    for x in range(2,num):
+        if num % x != 0:
+            continue
+        else:
+            print("No es primo")
+            return True
+
+    print("Es primo")
+
+num_primos(8)
+
+#7
+def primeras_mayusculas ():
+
+    frase = input("Ingresa un frase:")
+    palabras = frase.split(" ")
+    iniciales = ""
+    for x in range(0, len(palabras)):
+        iniciales += palabras[x][0].upper() + " "
+        
+    print("Las iniciales de las palabras son:",iniciales)
+
+primeras_mayusculas ()  
+
+#8
+
+
+def MCD (x,y):
+    resto = 0
+    while(y > 0):
+        resto = y
+        y = x % y
+        y = resto
+    return x
+print(MCD (4,2))
