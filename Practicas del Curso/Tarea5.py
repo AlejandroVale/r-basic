@@ -103,12 +103,51 @@ primeras_mayusculas ()
 
 #8
 
-
 def MCD (x,y):
     resto = 0
     while(y > 0):
         resto = y
         y = x % y
-        y = resto
+        x = resto
     return x
 print(MCD (4,2))
+
+#9
+
+def cifrado_cesar(palabra):# trabajamos todo con minusculas
+    letras = list(map(chr, range(97, 123)))
+    abc = dict(zip(letras,range(0,len(letras))))
+    palabra = palabra.lower()
+    codigo=""
+    print("Diccionario:",abc)
+    print("Frase a codificar:",palabra)
+    for letra in range(0,len(palabra)):
+        if palabra[letra] in range(0,9) or palabra[letra] == " ":
+            codigo += palabra[letra]
+        else:
+            posi = abc.get(palabra[letra]) + 3
+            if (posi > 25):
+                posi = posi - 26
+            codigo += letras[posi]
+   
+    return(codigo)
+
+
+print("Frase codificada: ",cifrado_cesar("Hola"))
+
+
+
+#10
+
+nombres = ["alejandro","francisco","carlos"]
+
+nombres.sort() # Orden alfabetico
+print(nombres)
+nombres.reverse()
+print(nombres) # Orden reverso
+nombres.sort(key = len)
+print(nombres)
+
+
+
+
