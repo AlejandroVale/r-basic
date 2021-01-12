@@ -1,0 +1,53 @@
+---
+title: "Gráficos"
+author: "Alejandro Vale"
+date: "9/1/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Gráficos con la función `plot`
+
+```{r , fig.align='center', echo=FALSE} 
+
+
+
+par(mfrow=c(1,2)) # para dividir la hoja en dos colunmas
+
+x = c(1,2,3,4,5)
+y = c(4,5,8,1,9)
+plot(x,y,xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato')
+
+f = function(x){sqrt(x)}
+
+plot (f,type = "p")
+
+par(mfrow=c(3,2)) #cambio filas y columnas
+
+plot(x,y,type="p",xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato')
+plot(x,y,type="l",xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato')
+plot(x,y,type="b",xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato')
+plot(x,y,type="o",xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato')
+plot(x,y,type="h",xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato')
+plot(x,y,type="s",xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato')
+
+par(mfrow=c(1,1)) #cambio filas y columnas
+
+plot(x,y,type="l",xlab = 'eje x',ylab = 'eje y', main='grafico de prueba', pch = 16,cex = 1,col='tomato',lty="dotted")
+
+
+x=c(5*(1:10))
+plot(x,c(exp(-x)+(-1)^x*x/2*sin(x)^2),xlab=",ylab=",main="gr[afico con varios elementos")
+segments(10,0,40,0, col ="red",lwd=4)
+arrows(10,0,40,-10, col ="blue", length=0.5,angle=5,code=3)
+symbols(40,0,stars = cbind(1,.5,1,.5,1,.5,1,.5,1,.5), add=TRUE, lwd=3, inches=0.5)
+polygon(c(20,30,40),c(10,-10,10), col="gold", density = 0, angle=90,lty=3,lwd=2)
+
+```
+
+

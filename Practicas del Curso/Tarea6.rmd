@@ -1,0 +1,63 @@
+---
+title: "Tarea 6"
+author: "Alejandro Vale"
+date: "9/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Pregunta 1
+
+```{r}
+f = function(x){x^2-3*x+30}
+plot(f,xlim = c(-15,15),main="Una parábola", xlab=expression(x),ylab=expression('y=x^2-3*x+30'))
+curve(f,add=TRUE, col="blue" )
+```
+
+# Pregunta 2
+
+```{r}
+i = c(-15:15)
+plot(f(i),main="Una parábola", xlab=expression(x), ylab=expression('y=x^2-3*x+30'))
+
+```
+
+# Pregunta 3
+```{r}
+f=function(x){5*2^x}
+curve(5*2^x, col="blue",-10,10,ylab=expression('y=5*2^x'))
+
+```
+
+# Pregunta 4
+```{r}
+
+f1= function (x){3*x}
+curve(3*x, col="blue",-10,20,main = "2 rectas\n Dos rectas con pendiente opuesto", xlab="", ylab="" )
+curve(-3*x, add=TRUE,col="green",-10,20)
+legend("topleft", col=c("blue","green"),legend=c("3x","-3x"),lwd=2,bty="l")
+```
+
+# Pregunta 5
+```{r}
+plot(0,0)
+abline(h=0, col="red",lwd=5)
+
+```
+
+# Pregunta 6
+```{r}
+curve(2*x+7, col="blue",-10,10,lwd=2)
+
+```
+
+
+
+
+
+
+
+
