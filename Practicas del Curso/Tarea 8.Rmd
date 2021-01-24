@@ -1,0 +1,100 @@
+---
+title: "Tarea 8"
+author: "Alejandro Vale"
+date: "23/1/2021"
+output: html_document
+---
+
+```{r}
+#¿Cuantos deportistas aparecen en el data frame?
+library(tidyverse)
+df = read.csv("medals.csv", header = TRUE, stringsAsFactors = TRUE)
+
+str(df)
+
+df1=aggregate(Year~Sport,data = df,FUN = sum, na.rm =TRUE)
+
+df1
+
+# Numero de Deportes
+nrow(df1)
+
+```
+
+```{r}
+#¿Cuantos han ganado medallas de oro, cuantos de plata y cuantos de bronce?
+
+library(tidyverse)
+df = read.csv("medals.csv", header = TRUE, stringsAsFactors = TRUE)
+
+df= cbind(df,contador = rep(1,nrow(df)))
+
+df=aggregate(contador~Medal,data = df,FUN = sum, na.rm =TRUE)
+df
+
+```
+
+```{r}
+#¿En cuantos lugares se han hecho olimpiadas de invierno?
+library(tidyverse)
+df = read.csv("medals.csv", header = TRUE, stringsAsFactors = TRUE)
+
+df1=aggregate(Year~City,data = df,FUN = sum, na.rm =TRUE)
+
+#Numero de Ciudades
+df1
+nrow(df1)
+
+
+```
+
+```{r}
+
+#¿Cuantos hombres y cuantas mujeres hay?
+
+library(tidyverse)
+df = read.csv("medals.csv", header = TRUE, stringsAsFactors = TRUE)
+
+df= cbind(df,contador = rep(1,nrow(df)))
+
+df=aggregate(contador~Event.gender,data = df,FUN = sum, na.rm =TRUE)
+df
+```
+
+
+```{r}
+
+# ¿En qué año participaron más deportistas?
+library(tidyverse)
+df = read.csv("medals.csv", header = TRUE, stringsAsFactors = TRUE)
+
+df= cbind(df,contador = rep(1,nrow(df)))
+
+df=aggregate(contador~Year,data = df,FUN = sum, na.rm =TRUE)
+
+df[order(-df$contador),][1,]
+
+
+```
+
+```{r}
+
+#El campo NOC indica el país del ganador de la medalla. ¿Qué país puede presumir de haber ganado más medallas de oro en los juegos de invierno entre 1960 y 1996?
+
+library(tidyverse)
+df = read.csv("medals.csv", header = TRUE, stringsAsFactors = TRUE)
+df[df$Medal == "Gold" & df$Year >= "1960" & df$Year <= "1996",]
+
+df= cbind(df,contador = rep(1,nrow(df)))
+
+df=aggregate(contador~NOC,data = df,FUN = sum, na.rm =TRUE)
+df[order(-df$contador),][1,]
+
+
+
+
+
+
+```
+
+

@@ -1,0 +1,18 @@
+---
+title: "Tarea 8"
+author: "Alejandro Vale"
+date: "23/1/2021"
+output: html_document
+---
+
+```{r}
+#¿Cuantos deportistas aparecen en el data frame?
+
+df = read.csv("medals.csv", header = TRUE)
+
+df
+
+
+```
+
+

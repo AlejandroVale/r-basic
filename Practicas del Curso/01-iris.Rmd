@@ -1,0 +1,89 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Data frame de Iris
+
+```{r}
+
+df = iris
+
+head(df,5) # los primeros n
+tail(df,5) # los ultimos n
+
+names(df) # nombre de campos
+str(df)   # nombres y tipos de campo
+
+rownames(df) # nombre de filas
+colnames(df)
+
+nrow(df) # numero de filas
+ncol(df) # numero de columnas
+
+class(df)
+
+df[1]
+
+df$Sepal.Length
+
+df[1,2]
+df[1:10,]
+df[df$Species == "setosa" & df$Sepal.Width > 4,]
+
+
+```
+
+```{r}
+
+# Leer datos
+
+
+# read.table()
+
+df = read.table("Datos/student_height_weight.txt", header = TRUE,col.names= c("Altura","Peso"))
+
+df
+
+write.table(df,file="Datos/EjemplodeGuardado.txt")
+
+
+```
+
+```{r}
+
+#Data Frame
+
+gender= c("H","M","M","M","H")
+age = c(23,45,20,30,18)
+family = c(2,3,4,3,5)
+
+df5 = data.frame(genero = gender, edad = age, familia = family,stringAsFactors = TRUE)
+
+#df5
+
+str(df5)
+
+df5_m = df5[df5$genero == "M",]
+
+
+df5_m  = droplevels(df5_m )
+str(df5_m )
+
+library(tidyverse)
+df5_h = select(df5, starts_with("genero"))
+df5_h
+
+
+
+```
+```{r}
+library(tidyverse)
+aggregate(cbind(Sepal.Length, Petal.Length) ~ Species, data = iris, FUN = mean, na.rm =TRUE)
+
+```
+
+
+
