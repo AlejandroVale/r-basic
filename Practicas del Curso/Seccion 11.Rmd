@@ -1,0 +1,67 @@
+---
+title: "Secion 11"
+author: "Alejandro Vale"
+date: "31/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+x = sample (1:5, size = 12, replace =TRUE)
+
+x
+
+table (x)
+
+Respuestas = factor(sample(c("Si", "No"), size = 12, replace =TRUE))
+
+Respuestas
+
+table(Respuestas)
+
+table(Respuestas)["Si"]
+```
+```{r}
+table(x) # Frecuencias absolutas
+
+prop.table(table(x)) # Frecuencias relativas
+
+round(100 * prop.table(table(x)),2) # porcentajes
+
+round(table(x) / length(x)*100, 2)# porcentajes
+
+names(which(table(x) == max(table(x)))) # Moda
+
+
+
+Sexo = sample(c("H","M"), size = length(Respuestas), replace = T)
+table(Respuestas, Sexo)
+T_b = table(Sexo,Respuestas)
+
+T_b 
+
+T_b["H","Si"]
+
+
+# Frecuencias Relativas Bidimensionales
+
+prop.table(T_b ) # Global
+
+prop.table(T_b, margin = 1 ) # Por fila
+
+prop.table(T_b, margin = 2 ) # Por columna
+
+
+
+# Paquete Gmodels
+
+library(gmodels)
+CrossTable(Sexo,Respuestas, prop.chisq = FALSE)
+
+```
+
+
