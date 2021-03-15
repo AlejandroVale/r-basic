@@ -64,4 +64,36 @@ CrossTable(Sexo,Respuestas, prop.chisq = FALSE)
 
 ```
 
+```{r}
+#C:\Users\Alejandro Vale\Documents\GitHub\r-basic\data\EnergyDrink
+
+Beb_Energ = read.table("C:/Users/Alejandro Vale/Documents/GitHub/r-basic/data/EnergyDrink", header=TRUE)
+
+str(Beb_Energ)
+summary(Beb_Energ)
+
+#apply(Beb_Energ, MARGIN=2, FUN=table)$sexo
+
+
+
+
+barplot(table(Beb_Energ[2]), main="Frecuencias absolutas de la variable Sexo")
+pie(table(Beb_Energ[2]), main="Frecuencias absolutas de la variable Sexo")
+
+plot(table(Sexo,Respuestas), main="Grafico de mosaico")
+
+```
+
+```{r}
+male = HairEyeColor[,,"Male"]
+female = HairEyeColor[,,"Female"]
+male
+female
+
+data = as.table(male+female)
+data
+
+sum(data)
+
+```
 
